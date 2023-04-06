@@ -5,11 +5,11 @@ import { useRouter } from 'next/router';
 
 export default function Redirect({user, callBack}) {
     const router = useRouter();
-    const logOut = () => {
-        localStorage.removeItem('userName');
-        callBack();
-        // router.reload();
-    }
+    // const logOut = () => {
+    //     localStorage.removeItem('userName');
+    //     callBack();
+    //     // router.reload();
+    // }
     return(
         <div>
             <h1>Profile</h1>
@@ -24,7 +24,7 @@ export default function Redirect({user, callBack}) {
                     blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                     placeholder="blur"
             />
-            <h1><a className={styles.textDecoration} onClick={() =>logOut()}>LOGOUT</a> || Redirect to <Link href="/Home" className={styles.textDecoration}>Home</Link></h1>
+            <h1><a className={styles.textDecoration} onClick={() =>callBack()}>LOGOUT</a> || Redirect to <Link href="/Home" className={styles.textDecoration}>Home</Link></h1>
         </div>
     )
 }

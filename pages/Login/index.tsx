@@ -12,6 +12,7 @@ import styles from '../../styles/Login.module.css';
 import Redirect from '../../components/Redirect';
 import NextButton from '../../components/NextButton';
 import darklogo from '~image/btn_google_signin_light_normal_web@2x.png';
+import noorlogo from '~image/NoorFevicon.png';
 declare global {
   interface Window { google:any }
 }
@@ -80,6 +81,8 @@ export default function Login() {
   
   const handleCLickRedirect = () => {
     setUserLoggedIn(false);
+    localStorage.removeItem('userName');
+    router.reload();
   }
   return (
     <div className={styles.detailsContainer}>
@@ -99,7 +102,16 @@ export default function Login() {
         <div className={styles.loginForm}>
           <div className={styles.loginCard}>
             <div className={styles.loginHeadder}>
-              <h1 className="M0">Login Form</h1>
+              {/* <h1 className="M0">Login Form</h1> */}
+              <Image 
+                      unoptimized 
+                      src={noorlogo}
+                      alt={"Noor"} 
+                      width={50} height={50}
+                      loading="lazy"
+                      blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                      placeholder="blur"
+                />
             </div>
             <div className={styles.innerForm}>
               <input type="text" name="name" value={userState} onChange={(event) => setUserState(event.target.value)} placeholder="userName" />

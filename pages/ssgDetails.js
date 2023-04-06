@@ -14,13 +14,13 @@ export default function Details({data}) {
     const filterImage = (sectionListDetailSingle) => {
       let single = [];
       let singleUrl = '';
-      sectionListDetailSingle.filter((img) => {
+      sectionListDetailSingle?.filter((img) => {
         if (img.postertype === "LANDSCAPE") {
           single = img.filelist;
         }
       });
       if (single.length > 0) {  
-          single.filter((img) => {
+          single?.filter((img) => {
             if (img.quality === "HD") {
               singleUrl =  img.filename;
             }

@@ -232,8 +232,8 @@ export function getParams(params) {
   for (var i in params){
     urlParam.push(encodeURI(i) + "=" + encodeURI(params[i]));
   }
-  urlParam =  urlParam.join("&").toString();
-  urlParam =  urlParam.replaceAll('%22', "");
+  urlParam =  urlParam?.join("&").toString();
+  urlParam =  urlParam?.replaceAll('%22', "");
   return urlParam;
 };
 
@@ -273,7 +273,7 @@ export function actThumbnailDataOne(data, dtype){
 export const getHotspotImageOne = (sectionListDetailSingle) => {
   let single = [];
   let singleUrl = '';
-  sectionListDetailSingle.filter((img) => {
+  sectionListDetailSingle?.filter((img) => {
 
     if (img.postertype === "LANDSCAPE") {
       single = img.filelist;
@@ -310,7 +310,7 @@ export const actAthumbnailImage = (sectionListDetailSingle, x) => {
   }
   });
   if (single.length > 0) {  
-      single.filter((img) => {
+      single?.filter((img) => {
         if (img.quality === "LOW") {
           singleUrl =  img.filename;
         }
