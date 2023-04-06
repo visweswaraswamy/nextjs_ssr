@@ -3,7 +3,7 @@
 import { useRouter } from "next/router";
 import Router from 'next/router';
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../redux/store";
+//import { RootState } from "../../redux/store";
 import { SET_PROFILE_NAME } from "../../redux/slices/profileSlice";
 import { useLayoutEffect, useEffect, useState } from "react";
 import Head from "next/head";
